@@ -27,4 +27,9 @@
 
 
 ### 2) How to use this program?
-- **TBC**
+- Each version of this program will have specific sample runs.
+You may review them.
+
+
+### 3) Other details
+- Compiled under **MinGW GCC 11.2.0 64-bit**
