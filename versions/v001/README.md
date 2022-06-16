@@ -1,14 +1,8 @@
 ## Sample Run ##
 1) ![resim](https://user-images.githubusercontent.com/68559468/174189463-e076c957-e79f-4415-b9f9-ace4634606a9.png)
-
-
-
+**________________________________________________________________________**
 2) ![resim](https://user-images.githubusercontent.com/68559468/174189566-3f1f2493-eac5-44ee-9c8c-2e33c2f641d5.png)
-
-
-
+**________________________________________________________________________**
 3) ![resim](https://user-images.githubusercontent.com/68559468/174189592-df93c57a-c4ba-4921-b828-70403b4dccdb.png)
-
-
-
+**________________________________________________________________________**
 4) ![resim](https://user-images.githubusercontent.com/68559468/174189723-d58f3598-a176-4296-82d4-66f7fbb4d862.png)
