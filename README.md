@@ -22,8 +22,11 @@
 
   4) **Population variance**:
       - ![resim](https://user-images.githubusercontent.com/68559468/173467341-7675520f-6775-4e44-bab5-2bfb6d3931f9.png)
+  
+  5) **Quartiles**:
+      - ![resim](https://user-images.githubusercontent.com/68559468/177177090-fd5823ce-079d-4bea-82e7-df540c6947a8.png)
 
-  5) **Sorts the given dataset with bubble sort**.
+  6) **Sorts the given dataset with bubble sort**.
 
 
 ### 2) How to use this program?
