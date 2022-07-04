@@ -33,3 +33,4 @@ You may review them.
 
 ### 3) Other details
 - Compiled under **MinGW GCC 11.2.0 64-bit**
+- If you intend to compile on a linux distribution, simply type **gcc main.c -lm** To link the math.h header to prevent header error.
