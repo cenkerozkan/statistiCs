@@ -99,7 +99,7 @@ int main(void){
             }
         }
 
-            // Invalid input.
+        // Invalid input.
         else{
             printf("Invalid input.\n");
         }
