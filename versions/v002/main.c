@@ -47,7 +47,7 @@ int main(void){
             return 0;
         }
 
-            // Continue.
+        // Continue.
         else if(cFlag == 'c'){
             while(true){
                 // Sample array declaration with dynamic memory allocation.
