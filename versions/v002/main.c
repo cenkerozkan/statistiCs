@@ -148,7 +148,7 @@ void calc_median(double *median, double const *array, int size){
             *median=(array[(size-1)/2]+array[((size-1)/2)+1])/2;
             break;
 
-            // Odd.
+        // Odd.
         default:
             *median=array[(size-1)/2];
             break;
