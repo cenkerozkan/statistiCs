@@ -31,7 +31,7 @@
 
 ### 2) How to use this program?
 - Each version of this program will have specific sample runs.
-You may review them.
+You may review them under the release section.
 
 
 ### 3) Other details
