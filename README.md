@@ -10,7 +10,7 @@
 
 
 ### 1) What does the program do?
-- **For finite and discrete data sets it calculates**:
+- **For finite data sets it calculates**:
   1) **Population mean**:
       - ![resim](https://user-images.githubusercontent.com/68559468/173466325-c7f4f225-e248-48aa-aa28-6dbd83a8f218.png)
 
