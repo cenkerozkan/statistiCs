@@ -52,8 +52,9 @@ int main(void) {
 					//DEBUG.
 					std::cout << vec[i] << std::endl;
 				}
-				double mean = calc_mean(vec);
-				std::cout << mean << std::endl;
+				// Results.
+				double mean=calc_mean(vec), median=calc_median(vec);
+				std::cout << mean << "\n" << median << "\n";
 			}
 			fin.close();
 		}
@@ -69,6 +70,18 @@ double calc_mean(std::vector<double> _vec) {
 	}
 	return temp / _vec.size();
 }
-//double calc_median(std::vector<double> _vec);
+double calc_median(std::vector<double> _vec) {
+	int temp = _vec.size(); 
+	switch (temp) {
+		// Even.
+		case 0:
+			return ((_vec[(temp - 1) / 2]) + (_vec[((temp - 1) / 2) + 1])) / 2;
+
+		// Odd.
+		default:
+			return (_vec[(temp - 1) / 2]);
+	}
+	return 0;
+}
 //double calc_dev_var(std::vector<double> _vec, double _mean, double &_variance, double &_deviation);
 //double calc_quartiles(std::vector<double> _vec, double &_quart1, double &_quart2, double &_quart3);

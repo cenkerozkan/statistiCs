@@ -1,2 +1,3 @@
 C:\Users\issolahp\Desktop\Cenker\SoftwareEngineering\Projelerim\statistiCs\x64\Debug\statistiCs.exe
 C:\Users\issolahp\Desktop\Cenker\SoftwareEngineering\Projelerim\statistiCs\Windows\x64\Debug\statistiCs.exe
+C:\Users\issola\Desktop\statistiCs\x64\Debug\statistiCs.exe
