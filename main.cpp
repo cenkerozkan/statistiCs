@@ -1,14 +1,30 @@
+/*
+* Author: Cenker Özkan
+* Date: 22.04.2023
+* statistiCs (Windows)
+* v003
+* 
+* Capabilities:
+*	1 - Reads data from txt file.
+*	2 - Sorts data set.
+*	3 - Calculates mean. (Population)
+*	4 - Calculates median.
+*	5 - Calculates standard deviation. (Population)
+*	6 - Calculates Quartile 1,3 and inner quartile range. (IQR)
+*	7 - Prints the sorted data set and results into a new file. 
+*/
+
 #include <iostream>
 #include <ostream>
 #include <fstream>
 #include <vector>
 #include <algorithm>
-//#include <bits/stdc++.h> (Non - standard)
+//#include <bits/stdc++.h> //(Non - standard)
 
 // Prototypes.
 double calc_mean(std::vector<double> _vec);
 double calc_median(std::vector<double> _vec);
-double calc_dev_var(std::vector<double> _vec, double _mean, double* _variance, double* _deviation);
+double calc_var(std::vector<double> _vec, double _mean);
 double calc_quartiles(std::vector<double> _vec, double* _quart1, double* _quart2, double _quart3);
 
 int main(void) {
@@ -48,13 +64,13 @@ int main(void) {
 					vec.push_back(temp);
 				}
 				sort(vec.begin(), vec.end());	// Using STL sort, instead of bubble sort.
-				for(int i=0; i<vec.size(); i++){
+				/*for (int i = 0; i<vec.size(); i++) {
 					//DEBUG.
 					std::cout << vec[i] << std::endl;
-				}
+				}*/
 				// Results.
-				double mean=calc_mean(vec), median=calc_median(vec);
-				std::cout << mean << "\n" << median << "\n";
+				double mean = calc_mean(vec), median = calc_median(vec), variance = calc_var(vec, mean);
+				std::cout << mean << "\n" << median << "\n" << variance << "\n" << sqrt(variance) << "\n";
 			}
 			fin.close();
 		}
@@ -63,6 +79,7 @@ int main(void) {
 
 
 // Functions.
+// Calculate mean.
 double calc_mean(std::vector<double> _vec) {
 	double temp = 0;
 	for (int i = 0; i < _vec.size(); i++) {
@@ -70,6 +87,8 @@ double calc_mean(std::vector<double> _vec) {
 	}
 	return temp / _vec.size();
 }
+
+// Calculate median.
 double calc_median(std::vector<double> _vec) {
 	int temp = _vec.size(); 
 	switch (temp) {
@@ -83,5 +102,13 @@ double calc_median(std::vector<double> _vec) {
 	}
 	return 0;
 }
-//double calc_dev_var(std::vector<double> _vec, double _mean, double &_variance, double &_deviation);
+
+// Calculate variance.
+double calc_var(std::vector<double> _vec, double _mean) {
+	double temp = 0;
+	for (int i = 0; i < _vec.size(); i++) {
+		temp += ((_vec[i] - _mean) * (_vec[i] - _mean) / _vec.size());
+	}
+	return temp;
+}
 //double calc_quartiles(std::vector<double> _vec, double &_quart1, double &_quart2, double &_quart3);
