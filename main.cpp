@@ -25,7 +25,7 @@
 double calc_mean(std::vector<double> _vec);
 double calc_median(std::vector<double> _vec);
 double calc_var(std::vector<double> _vec, double _mean);
-double calc_quartiles(std::vector<double> _vec, double* _quart1, double* _quart2, double _quart3);
+void calc_quartiles(std::vector<double> _vec, double &_quart1, double &_quart3);
 
 int main(void) {
 	std::cout << "\n\nHi, welcome to the statistiCs program!\nThis program has been written purely for educational\npurposes and does not offer any professional results.\nTherefore, it is not recommended for business use.\n\nIn short, statistiCs does the following calculations:\n\t1) Mean\n\t2) Median\n\t3) Standart deviation\n\t4) Standart variance\n\t5) Quartile 1 and Quartile 3\n\t6) IQR\n\nAnd sorts the dataset.\nNOTE: It only works with finite discrete datasets!\nYou need to input a txt file name located in the same directory as the program.\n\n";
@@ -69,8 +69,9 @@ int main(void) {
 					std::cout << vec[i] << std::endl;
 				}*/
 				// Results.
-				double mean = calc_mean(vec), median = calc_median(vec), variance = calc_var(vec, mean);
-				std::cout << mean << "\n" << median << "\n" << variance << "\n" << sqrt(variance) << "\n";
+				double mean = calc_mean(vec), median = calc_median(vec), variance = calc_var(vec, mean), q1 = 0, q3 = 0;
+				calc_quartiles(vec, q1, q3);
+				std::cout << mean << "\n" << median << "\n" << variance << "\n" << sqrt(variance) << "\n" << vec[q1] << "\n" << vec[q3] - vec[q1] << "\n" << vec[q3] << "\n";
 			}
 			fin.close();
 		}
@@ -111,4 +112,11 @@ double calc_var(std::vector<double> _vec, double _mean) {
 	}
 	return temp;
 }
-//double calc_quartiles(std::vector<double> _vec, double &_quart1, double &_quart2, double &_quart3);
+
+// Calculate quartiles.
+void calc_quartiles(std::vector<double> _vec, double& _quart1, double& _quart3) {
+	_quart1 = 0.25 * (_vec.size() + 1);
+	_quart3 = 0.75 * (_vec.size() + 1);
+	// I will not include the interpolation process in this version for now.
+	return;
+}
