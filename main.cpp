@@ -15,10 +15,10 @@
 *	8 - Automatic size allocation.
 */
 
-#define __STDC_WANT_LIB_EXT__ 1
+#pragma warning(disable:4996)
 #include <iostream>
 #include <fstream>
-#include <time.h>
+#include <chrono>	// time.h alternative.
 #include <vector>
 #include <algorithm>
 //#include <bits/stdc++.h> //(Non - standard)
@@ -30,6 +30,7 @@ double calc_var(std::vector<double> _vec, double _mean);
 void calc_quartiles(std::vector<double> _vec, double &_quart1, double &_quart3);
 bool is_exist(std::string _filename);
 void write_log(std::vector<double> _vec, double _mean, double _median, double _variance, double _quart1, double _quart3);
+std::string time_curr();
 
 int main(void) {
 	std::cout << "\n\nHi, welcome to the statistiCs program!\nThis program has been written purely for educational\npurposes and does not offer any professional results.\nTherefore, it is not recommended for business use.\n\nIn short, statistiCs does the following calculations:\n\t1) Mean\n\t2) Median\n\t3) Standart deviation\n\t4) Standart variance\n\t5) Quartile 1 and Quartile 3\n\t6) IQR\n\nAnd sorts the dataset.\nNOTE: It only works with finite discrete datasets!\nYou need to input a txt file name located in the same directory as the program.\n\n";
@@ -138,16 +139,36 @@ bool is_exist(std::string _filename) {
 	return 0;
 }
 
+// Explain later.
+std::string time_curr() {
+	std::chrono::system_clock::time_point p = std::chrono::system_clock::now();
+	time_t t = std::chrono::system_clock::to_time_t(p);
+	char str[26];
+	ctime_s(str, sizeof str, &t);
+	return str;
+}
+
 
 // New log function.
 void write_log(std::vector<double> _vec, double _mean, double _median, double _variance, double _quart1, double _quart3) {
 	int flag = 0;
+	std::string var_time = time_curr();
 	while (true) {
 		std::cout << "Save(1)\nSave as(2)\n:";
 		std::cin >> flag;
 		// Save.
 		if (flag == 1) {
-			continue;
+			time_t t = time(0);
+			struct tm* now = localtime(&t);
+
+			char buffer[80];
+			strftime(buffer, 80, "%Y-%m-%d %I-%M-%S.txt", now);
+
+			std::ofstream fout(buffer);
+			fout << "Date & Time: " << var_time << "\n\nSize of the data set: " << _vec.size() << "\nMean: " << _mean << "\nMedian: " << _median << "\nStandard Dev: " << sqrt(_variance) << "\nVariance: " << _variance << "\nQuartile1: " << _vec[_quart1] << "\nIQR: " << _vec[_quart3] - _vec[_quart1] << "\nQuartile3: " << _vec[_quart3] << "\n";
+
+			fout.close();
+			break;
 		}
 		// Save as.
 		else if (flag == 2) {
@@ -160,11 +181,9 @@ void write_log(std::vector<double> _vec, double _mean, double _median, double _v
 				std::cerr << "There is another file with the same name.\n";
 			}
 			else {
-				time_t sLogTime;
-				time(&sLogTime);
-				char buff[26];
+				// Create file.
 				std::ofstream fout(filename);
-				fout << "Date & Time: " << ctime_s(buff, sizeof buff, &sLogTime) << "\n\nSize of the data set: " << _vec.size() << "\nMean: " << _mean << "\nMedian: " << _median << "\nStandard Dev: " << sqrt(_variance) << "\nVariance: " << _variance << "\nQuartile1: " << _vec[_quart1] << "\nIQR: " << _vec[_quart3] - _vec[_quart1] << "\nQuartile3: " << _vec[_quart3] << "\n";
+				fout << "Date & Time: " << var_time << "\n\nSize of the data set: " << _vec.size() << "\nMean: " << _mean << "\nMedian: " << _median << "\nStandard Dev: " << sqrt(_variance) << "\nVariance: " << _variance << "\nQuartile1: " << _vec[_quart1] << "\nIQR: " << _vec[_quart3] - _vec[_quart1] << "\nQuartile3: " << _vec[_quart3] << "\n";
 				fout.close();
 				break;
 			}

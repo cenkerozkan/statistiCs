@@ -1,0 +1,11 @@
+Date & Time: Mon Apr 24 20:42:23 2023
+
+
+Size of the data set: 101
+Mean: 7596.57
+Median: 7115
+Standard Dev: 3753.85
+Variance: 1.40914e+07
+Quartile1: 4996
+IQR: 5158
+Quartile3: 10154
