@@ -1,7 +1,11 @@
 ﻿  main.cpp
-C:\Users\issola\Desktop\statistiCs\main.cpp(74,102): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
-C:\Users\issola\Desktop\statistiCs\main.cpp(74,121): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
-C:\Users\issola\Desktop\statistiCs\main.cpp(74,131): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
-C:\Users\issola\Desktop\statistiCs\main.cpp(74,150): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
-C:\Users\issola\Desktop\statistiCs\main.cpp(94,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\issola\Desktop\statistiCs\main.cpp(79,180): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\issola\Desktop\statistiCs\main.cpp(79,204): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\issola\Desktop\statistiCs\main.cpp(79,214): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\issola\Desktop\statistiCs\main.cpp(79,244): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\issola\Desktop\statistiCs\main.cpp(102,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\issola\Desktop\statistiCs\main.cpp(166,266): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\issola\Desktop\statistiCs\main.cpp(166,296): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\issola\Desktop\statistiCs\main.cpp(166,312): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\issola\Desktop\statistiCs\main.cpp(166,348): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
   statistiCs.vcxproj -> C:\Users\issola\Desktop\statistiCs\x64\Debug\statistiCs.exe
