@@ -13,9 +13,10 @@
 *	6 - Calculates Quartile 1,3 and inner quartile range. (IQR)
 *	7 - Prints the sorted data set and results into a new file. 
 *	8 - Automatic size allocation.
+*	9 - "Save as" and "Save" options.
 */
 
-#pragma warning(disable:4996)
+#pragma warning(disable:4996)	// To disable thread warn caused by localtime function.
 #include <iostream>
 #include <fstream>
 #include <chrono>	// time.h alternative.
@@ -33,7 +34,7 @@ void write_log(std::vector<double> _vec, double _mean, double _median, double _v
 std::string time_curr();
 
 int main(void) {
-	std::cout << "\n\nHi, welcome to the statistiCs program!\nThis program has been written purely for educational\npurposes and does not offer any professional results.\nTherefore, it is not recommended for business use.\n\nIn short, statistiCs does the following calculations:\n\t1) Mean\n\t2) Median\n\t3) Standart deviation\n\t4) Standart variance\n\t5) Quartile 1 and Quartile 3\n\t6) IQR\n\nAnd sorts the dataset.\nNOTE: It only works with finite discrete datasets!\nYou need to input a txt file name located in the same directory as the program.\n\n";
+	std::cout << "Hi, welcome to the statistiCs program!\nThis program has been written purely for educational\npurposes and does not offer any professional results.\nTherefore, it is not recommended for business use.\n\nIn short, statistiCs does the following calculations:\n\t1) Mean\n\t2) Median\n\t3) Standart deviation\n\t4) Standart variance\n\t5) Quartile 1 and Quartile 3\n\t6) IQR\n\nAnd sorts the dataset.\nNOTE: It only works with finite discrete datasets!\nYou need to input a txt file name located in the same directory as the program.\n\n";
 	// I know it is very inefficient to use a string
 	// just for a single character check, but I'll 
 	// leave it that way for now.
@@ -156,6 +157,8 @@ void write_log(std::vector<double> _vec, double _mean, double _median, double _v
 	while (true) {
 		std::cout << "Save(1)\nSave as(2)\n:";
 		std::cin >> flag;
+		std::ofstream fout;
+
 		// Save.
 		if (flag == 1) {
 			time_t t = time(0);
@@ -163,12 +166,7 @@ void write_log(std::vector<double> _vec, double _mean, double _median, double _v
 
 			char buffer[80];
 			strftime(buffer, 80, "%Y-%m-%d %I-%M-%S.txt", now);
-
-			std::ofstream fout(buffer);
-			fout << "Date & Time: " << var_time << "\n\nSize of the data set: " << _vec.size() << "\nMean: " << _mean << "\nMedian: " << _median << "\nStandard Dev: " << sqrt(_variance) << "\nVariance: " << _variance << "\nQuartile1: " << _vec[_quart1] << "\nIQR: " << _vec[_quart3] - _vec[_quart1] << "\nQuartile3: " << _vec[_quart3] << "\n";
-
-			fout.close();
-			break;
+			fout.open(buffer);
 		}
 		// Save as.
 		else if (flag == 2) {
@@ -182,12 +180,22 @@ void write_log(std::vector<double> _vec, double _mean, double _median, double _v
 			}
 			else {
 				// Create file.
-				std::ofstream fout(filename);
-				fout << "Date & Time: " << var_time << "\n\nSize of the data set: " << _vec.size() << "\nMean: " << _mean << "\nMedian: " << _median << "\nStandard Dev: " << sqrt(_variance) << "\nVariance: " << _variance << "\nQuartile1: " << _vec[_quart1] << "\nIQR: " << _vec[_quart3] - _vec[_quart1] << "\nQuartile3: " << _vec[_quart3] << "\n";
-				fout.close();
-				break;
+				fout.open(filename);
 			}
 		}
 		else { std::cerr << "Invalid argument.\n"; }
+		fout << "Date & Time: " << var_time << "\n\nSize of the data set: " << _vec.size() << "\nMean: " << _mean << "\nMedian: " << _median << "\nStandard Dev: " << sqrt(_variance) << "\nVariance: " << _variance << "\nQuartile1: " << _vec[_quart1] << "\nIQR: " << _vec[_quart3] - _vec[_quart1] << "\nQuartile3: " << _vec[_quart3] << "\n\n\n";
+		
+		// Print sorted data.
+		int j = 1;
+		for (int i = 0; i < _vec.size(); i++) {
+			fout << _vec[i] << ",\t";
+			j++;
+			if (j%5 == 1) {
+				fout << "\n";
+			}
+		}
+		fout.close();
+		break;
 	}
 }
