@@ -155,7 +155,7 @@ void write_log(std::vector<double> _vec, double _mean, double _median, double _v
     int flag = 0;
     std::string var_time = time_curr();
     while (true) {
-        std::cout << "Save(1)\nSave as(2)\n:";
+        std::cout << "\n\nSave(1)\nSave as(2)\n:";
         std::cin >> flag;
         std::ofstream fout;
 
