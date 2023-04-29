@@ -3,9 +3,8 @@ C:\Users\issola\Desktop\statistiCs\main.cpp(84,180): warning C4244: 'argument': 
 C:\Users\issola\Desktop\statistiCs\main.cpp(84,204): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
 C:\Users\issola\Desktop\statistiCs\main.cpp(84,214): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
 C:\Users\issola\Desktop\statistiCs\main.cpp(84,244): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
-C:\Users\issola\Desktop\statistiCs\main.cpp(188,235): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
-C:\Users\issola\Desktop\statistiCs\main.cpp(188,265): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
-C:\Users\issola\Desktop\statistiCs\main.cpp(188,281): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
-C:\Users\issola\Desktop\statistiCs\main.cpp(188,317): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
-  LINK : C:\Users\issola\Desktop\statistiCs\x64\Debug\statistiCs.exe not found or not built by the last incremental link; performing full link
+C:\Users\issola\Desktop\statistiCs\main.cpp(189,235): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\issola\Desktop\statistiCs\main.cpp(189,265): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\issola\Desktop\statistiCs\main.cpp(189,281): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\issola\Desktop\statistiCs\main.cpp(189,317): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
   statistiCs.vcxproj -> C:\Users\issola\Desktop\statistiCs\x64\Debug\statistiCs.exe

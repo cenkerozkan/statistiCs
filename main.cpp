@@ -167,7 +167,7 @@ void write_log(std::vector<double> _vec, double _mean, double _median, double _v
 			struct tm* now = localtime(&t);
 
 			char buffer[80];
-			strftime(buffer, 80, "%Y-%m-%d %I-%M-%S.txt", now);
+			strftime(buffer, 80, "%d-%m-%Y %I-%M-%S.txt", now);
 			fout.open(buffer);
 		}
 		// Save as.
