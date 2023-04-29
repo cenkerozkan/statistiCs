@@ -56,9 +56,9 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="statistiCs" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="statistiCs" TARGET_NAME="statistiCs" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="statistiCs" RUN_TARGET_NAME="statistiCs">
@@ -77,6 +77,7 @@
       <updated>1682432182015</updated>
       <workItem from="1682432183646" duration="207000" />
       <workItem from="1682769070274" duration="243000" />
+      <workItem from="1682777333878" duration="42000" />
     </task>
     <servers />
   </component>
