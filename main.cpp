@@ -33,6 +33,7 @@ bool is_exist(std::string _filename);
 void write_log(std::vector<double> _vec, double _mean, double _median, double _variance, double _quart1, double _quart3);
 std::string time_curr();
 
+int size=0;
 int main(void) {
     std::cout << "Hi, welcome to the statistiCs program!\nThis program has been written purely for educational\npurposes and does not offer any professional results.\nTherefore, it is not recommended for business use.\n\nIn short, statistiCs does the following calculations:\n\t1) Mean\n\t2) Median\n\t3) Standart deviation\n\t4) Standart variance\n\t5) Quartile 1 and Quartile 3\n\t6) IQR\n\nAnd sorts the dataset.\nNOTE: It only works with finite discrete datasets!\nYou need to input a txt file name located in the same directory as the program.\n\n";
     // I know it is very inefficient to use a string
@@ -49,7 +50,7 @@ int main(void) {
             break;
         }
 
-            // Continue.
+        // Continue.
         else if (sFlag == "c" || sFlag == "C") {
             std::string filename;
             std::cout << "Enter the file name:\n";
@@ -60,7 +61,7 @@ int main(void) {
             if (!fin.is_open()){
                 std::cerr << "File not found.\n";
             }
-                // File exists.
+            // File exists.
             else{
                 // Using vector instead of an array.
                 std::vector<double> vec;
@@ -70,6 +71,7 @@ int main(void) {
                     double temp;
                     fin >> temp;
                     vec.push_back(temp);
+                    size++;
                 }
                 sort(vec.begin(), vec.end());	// Using STL sort, instead of bubble sort.
                 /*for (int i = 0; i<vec.size(); i++) {
@@ -94,7 +96,7 @@ int main(void) {
 // Calculate mean.
 double calc_mean(std::vector<double> _vec) {
     double temp = 0;
-    for (int i = 0; i < _vec.size(); i++) {
+    for (int i = 0; i < size; i++) {
         temp += _vec[i];
     }
     return temp / _vec.size();
@@ -102,7 +104,7 @@ double calc_mean(std::vector<double> _vec) {
 
 // Calculate median.
 double calc_median(std::vector<double> _vec) {
-    int temp = _vec.size();
+    int temp = size;
     switch (temp) {
         // Even.
         case 0:
@@ -119,15 +121,15 @@ double calc_median(std::vector<double> _vec) {
 double calc_var(std::vector<double> _vec, double _mean) {
     double temp = 0;
     for (int i = 0; i < _vec.size(); i++) {
-        temp += ((_vec[i] - _mean) * (_vec[i] - _mean) / _vec.size());
+        temp += ((_vec[i] - _mean) * (_vec[i] - _mean) / size);
     }
     return temp;
 }
 
 // Calculate quartiles.
 void calc_quartiles(std::vector<double> _vec, double& _quart1, double& _quart3) {
-    _quart1 = 0.25 * (_vec.size() + 1);
-    _quart3 = 0.75 * (_vec.size() + 1);
+    _quart1 = 0.25 * (size + 1);
+    _quart3 = 0.75 * (size + 1);
     // I will not include the interpolation process in this version for now.
     return;
 }
@@ -188,7 +190,7 @@ void write_log(std::vector<double> _vec, double _mean, double _median, double _v
 
         // Print sorted data.
         int j = 1;
-        for (int i = 0; i < _vec.size(); i++) {
+        for (int i = 0; i < size; i++) {
             fout << _vec[i] << ",\t";
             j++;
             if (j%5 == 1) {

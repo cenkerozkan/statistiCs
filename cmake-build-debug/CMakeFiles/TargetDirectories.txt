@@ -1,0 +1,3 @@
+C:/Users/issola/Desktop/statistiCs/cmake-build-debug/CMakeFiles/statistiCs.dir
+C:/Users/issola/Desktop/statistiCs/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/issola/Desktop/statistiCs/cmake-build-debug/CMakeFiles/rebuild_cache.dir
